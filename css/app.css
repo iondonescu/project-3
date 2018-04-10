@@ -1,0 +1,239 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+  font-family: 'Coda', cursive;
+}
+#header{
+   background-color: #c9f2f2;
+   box-shadow: 0px 3px #888888;
+   margin-bottom: 10px;
+   height:60px;
+   margin-right:0;
+}
+.header_inner {
+   width: 100%;
+}
+.logo {
+   height: 40px;
+   padding-left:10px;
+   padding-top: 10px;
+}
+.student_course {
+   float:right;
+   padding-top: 0px;
+   padding-right: 5px;
+   color:#2d3c49;
+}
+.student_name{
+   font-size: 32px;
+   font-weight:100;
+   text-transform: uppercase;
+   margin:0;
+   padding-top:6px;
+}
+.course{
+   font-size: 16px;
+   font-weight:100;
+   text-transform:uppercase;
+   float:right;
+   margin:0;
+}
+/*Container */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+    cursor:not-allowed;
+}
+
+.card {
+    height: 125px;
+    width: 125px;
+    font-size: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    background-image: url('../img/fingerprint.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cat {
+    visibility:hidden;
+}
+/*
+ *Classes below should be added in javaScript
+ */
+.cardFront1 {
+    background-image: url('../img/cat1.jpg');
+}
+.cardFront2 {
+    background-image: url('../img/cat2.jpg');
+}
+.cardFront3 {
+    background-image: url('../img/cat3.jpg');
+}
+.cardFront4 {
+    background-image: url('../img/cat4.jpg');
+}
+.cardFront5 {
+    background-image: url('../img/cat5.jpg');
+}
+.cardFront6 {
+    background-image: url('../img/cat6.jpg');
+}
+.cardFront7 {
+    background-image: url('../img/cat7.jpg');
+}
+.cardFront8 {
+    background-image: url('../img/cat8.jpg');
+}
+.cardFront1,.cardFront2,.cardFront3,.cardFront4,.cardFront5,.cardFront6,.cardFront7,.cardFront8{
+    height: 125px;
+    width: 125px;
+    font-size: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    background-size: cover;
+    background-position: center;
+}
+.deck .card.open{
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+
+}
+.open{
+    transition: width 1s, height 1s, transform 2s;
+    transform: rotate(360deg);
+    cursor:default;
+}
+.deck .card.show {
+    font-size: 33px;
+}
+.show{
+    cursor: none;
+}
+.unmatch{
+    transform:scale(1.1,1.1);
+}
+.deck .card.disabled {
+  	pointer-events: none;
+  	opacity: 0.9;
+}
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+  }
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+  }
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color:red;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+.score-panel .volume {
+    margin-right: 10px;
+    float: right;
+    cursor: pointer;
+}
+.time {
+    padding-left: 20px;
+    color:red;
+}
+  /*
+   *Modal window
+   */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    width: 90%; /* Full width */
+    height: 90%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    font-size: 24px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+button {
+  font-size: 28px;
+}
